@@ -2,7 +2,7 @@
 
 curl "http://localhost:4741/workouts/${ID}" \
   --include \
-  --request GET \
-  #--header "Authorization: Token token=${TOKEN}"
+  --request DELETE \
+  --header "Authorization: Token token=${TOKEN}"
 
 echo
