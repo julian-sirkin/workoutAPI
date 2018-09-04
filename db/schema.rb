@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180904140544) do
+ActiveRecord::Schema.define(version: 20180904191213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20180904140544) do
     t.index ["user_id"], name: "index_examples_on_user_id"
   end
 
-  create_table "excercises", force: :cascade do |t|
-    t.string "name"
+  create_table "exercises", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "name"
     t.string "exercise_type"
     t.integer "duration"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_excercises_on_user_id"
+    t.index ["user_id"], name: "index_exercises_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,6 +55,6 @@ ActiveRecord::Schema.define(version: 20180904140544) do
   end
 
   add_foreign_key "examples", "users"
-  add_foreign_key "excercises", "users"
+  add_foreign_key "exercises", "users"
   add_foreign_key "workouts", "users"
 end

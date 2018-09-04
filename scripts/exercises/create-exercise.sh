@@ -7,8 +7,8 @@ curl "http://localhost:4741/exercises/" \
   --header "Content-Type: application/json" \
   --data '{
     "exercise": {
+      "name": "'"${NAME}"'",
       "user_id": "'"${ID}"'",
-      "name": "'"${DATE}"'",
       "exercise_type": "'"${TYPE}"'",
       "duration": "'"${DURATION}"'",
       "description": "'"${DESCRIPTION}"'"
