@@ -15,7 +15,7 @@ class WorkoutsController < ProtectedController
 
   # POST /workouts
   def create
-    @workout = Workout.new(workout_params)
+    @workout = current_user.workouts.new(workout_params)
 
     if @workout.save
       render json: @workout, status: :created, location: @workout

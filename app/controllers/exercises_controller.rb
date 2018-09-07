@@ -15,7 +15,7 @@ class ExercisesController < OpenReadController
 
   # POST /exercises
   def create
-    @exercise = Exercise.create(exercise_params)
+    @exercise = current_user.exercises.create(exercise_params)
     if @exercise.save
       render json: @exercise, status: :created, location: @exercise
     else
